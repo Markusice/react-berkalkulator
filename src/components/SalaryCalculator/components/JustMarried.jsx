@@ -53,9 +53,9 @@ const JustMarried = ({ isEligible, setIsEligible }) => {
     const currentMonth = currentDate.getMonth();
     const marriageMonth = date.getMonth();
 
-    if (currentYear - marriageYear > 2) setIsEligible(true);
-    else if (currentYear - marriageYear === 2 && currentMonth > marriageMonth)
+    if (currentYear - marriageYear === 0 && currentMonth - marriageMonth >= 1)
       setIsEligible(true);
+    else if ([1, 2].includes(currentYear - marriageYear)) setIsEligible(true);
     else setIsEligible(false);
   };
 
